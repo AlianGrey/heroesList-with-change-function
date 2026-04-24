@@ -1,0 +1,66 @@
+{
+  "heroes": [
+    {
+      "id": 1,
+      "name": "Первый герой",
+      "description": "Первый герой в рейтинге!",
+      "element": "fire"
+    },
+    {
+      "id": 2,
+      "name": "Неизвестный герой",
+      "description": "Скрывающийся в тени",
+      "element": "wind"
+    },
+    {
+      "id": "32f6ef23-4d11-4ecf-9519-9c27fce1b7eb",
+      "name": "asfdgfhjg",
+      "description": "rshtdhfjgwrhtdfhgjh",
+      "element": "water"
+    },
+    {
+      "id": "e62a7a71-d21d-449d-9616-79d91fa25340",
+      "name": "Гарри Поттер",
+      "description": "Колдовать палочкой, летать на метле",
+      "element": "fire"
+    },
+    {
+      "id": "9f630aee-43b2-4a5f-aa54-a04f4c53c25e",
+      "name": "Воландеморт",
+      "description": "Злой волшебник",
+      "element": "fire"
+    }
+  ],
+  "filters": [
+    {
+      "id": "1",
+      "name": "all",
+      "label": "Все",
+      "class": "btn-outline-dark"
+    },
+    {
+      "id": "2",
+      "name": "fire",
+      "label": "Огонь",
+      "class": "btn-danger"
+    },
+    {
+      "id": "3",
+      "name": "water",
+      "label": "Вода",
+      "class": "btn-primary"
+    },
+    {
+      "id": "4",
+      "name": "wind",
+      "label": "Ветер",
+      "class": "btn-success"
+    },
+    {
+      "id": "5",
+      "name": "earth",
+      "label": "Земля",
+      "class": "btn-secondary"
+    }
+  ]
+}
