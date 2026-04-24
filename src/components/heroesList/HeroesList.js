@@ -1,13 +1,15 @@
 import {useHttp} from '../../hooks/http.hook';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import Spinner from '../spinner/Spinner';
 import { heroesFetching, heroesFetched, heroesFetchingError } from '../../actions';
 import HeroesListItem from "../heroesListItem/HeroesListItem";
-import Spinner from '../spinner/Spinner';
+import './heroesList.scss'
+
 
 const HeroesList = () => {
-    const {heroes, heroesLoadingStatus} = useSelector(state => state);
+    const {heroes, heroesLoadingStatus, activeFilter} = useSelector(state => state);
     const [ deletingId, setDeletingId ] = useState(null)
     const dispatch = useDispatch();
     const {request} = useHttp();
@@ -17,11 +19,8 @@ const HeroesList = () => {
         request("http://localhost:3001/heroes")
             .then(data => dispatch(heroesFetched(data)))
             .catch(() => dispatch(heroesFetchingError()))
-
         // eslint-disable-next-line
     }, []);
-
-
 
     if (heroesLoadingStatus === "loading") {
         return <Spinner/>;
@@ -30,24 +29,39 @@ const HeroesList = () => {
     }
 
     const renderHeroesList = (arr) => {
+        let filtered =[]
         if (arr.length === 0) {
             return <h5 className="text-center mt-5">Героев пока нет</h5>
         }
 
-        return arr.map((props) => {
-            return <HeroesListItem 
-                    key={props.id} 
+        filtered = arr.filter ( item => {
+            if (activeFilter === 'all') return true;
+            return item.element === activeFilter;
+        })
+
+        if ( filtered.length === 0 ) {
+            return (
+                <CSSTransition key="empty" timeout={300} classNames="hero">
+                    <h5 className="text-center mt-5">Нет соответствующих элементов</h5>
+                </CSSTransition>
+            )
+        } 
+
+        return filtered.map( props => (
+            <CSSTransition key={props.id} timeout={300} classNames="hero">
+                <HeroesListItem 
                     {...props}
                     deletingId={deletingId}
-                    setDeletingId={setDeletingId}/>
-        })
+                    setDeletingId={setDeletingId}/> 
+            </CSSTransition>
+        ))
     }
 
     const elements = renderHeroesList(heroes);
     return (
-        <ul>            
-            {elements}
-        </ul>
+       <TransitionGroup component="ul"> 
+                {elements}
+        </TransitionGroup >
     )
 }
 

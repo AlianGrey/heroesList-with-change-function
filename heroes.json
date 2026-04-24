@@ -36,31 +36,31 @@
       "id": "1",
       "name": "all",
       "label": "Все",
-      "class": "btn-outline-dark"
+      "class": "outline-dark"
     },
     {
       "id": "2",
       "name": "fire",
       "label": "Огонь",
-      "class": "btn-danger"
+      "class": "danger"
     },
     {
       "id": "3",
       "name": "water",
       "label": "Вода",
-      "class": "btn-primary"
+      "class": "primary"
     },
     {
       "id": "4",
       "name": "wind",
       "label": "Ветер",
-      "class": "btn-success"
+      "class": "success"
     },
     {
       "id": "5",
       "name": "earth",
       "label": "Земля",
-      "class": "btn-secondary"
+      "class": "secondary"
     }
   ]
 }

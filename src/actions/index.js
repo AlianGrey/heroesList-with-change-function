@@ -70,3 +70,10 @@ export const filtersLoadingError = () => {
         type: 'FILTERS_LOADING_ERROR'
     }
 }
+//filter для фильтрации списка
+export const setFilter = (activeFilter) => {
+    return {
+        type: 'SET_FILTER',
+        payload: activeFilter
+    }
+}

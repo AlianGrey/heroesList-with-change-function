@@ -3,7 +3,9 @@ const initialState = {
     heroesLoadingStatus: 'idle',
     deleteStatus: 'idle',
     heroAddingStatus: 'idle',
-    filters: []
+    filters: [],
+    filtersLoadingStatus: 'idle',
+    activeFilter: 'all'
 }
 
 const reducer = (state = initialState, action) => {
@@ -74,7 +76,12 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 filtersLoadingStatus: 'error',
             }
-
+        //установка фильтра для фильтрации
+        case 'SET_FILTER' : 
+            return {
+                ...state,
+                activeFilter: action.payload,
+            }
 
         default: return state
     }
