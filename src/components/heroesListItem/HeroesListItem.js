@@ -1,5 +1,5 @@
 import {useHttp} from '../../hooks/http.hook';
-import { heroDeleteSuccess, heroDeleteError } from '../../actions';
+import { heroDeleted, heroDeleteError } from '../../actions';
 import { useDispatch, useSelector } from 'react-redux';
 import Spinner from '../spinner/Spinner';
 import userImg from '../../assets/default_user.png'
@@ -13,7 +13,7 @@ const HeroesListItem = ({ id, name, description, element, deletingId, setDeletin
 	const deleteHero = (id) => {
 		setDeletingId(id)
 		request(`http://localhost:3001/heroes/${id}`, 'DELETE')
-			.then( () => dispatch(heroDeleteSuccess(id)) )
+			.then( () => dispatch(heroDeleted(id)) )
 			.catch( () => dispatch(heroDeleteError()) )
 			.finally( () => setDeletingId(null) ) 
 	}

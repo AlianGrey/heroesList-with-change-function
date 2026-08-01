@@ -12,6 +12,7 @@ const HeroesFilters = () => {
    
     useEffect(() => {
         dispatch(filtersLoading())
+        //request(process.env.PUBLIC_URL + '/filters')
         request("http://localhost:3001/filters")
             .then( data => dispatch(filtersLoaded(data)))
             .catch( () => dispatch(filtersLoadingError()))

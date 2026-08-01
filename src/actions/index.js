@@ -16,9 +16,9 @@ export const heroesFetchingError = () => {
     }
 }
 //delete for HeroesListItem
-export const heroDeleteSuccess = (id) => {
+export const heroDeleted = (id) => {
     return {
-        type: 'HERO_DELETE_SUCCESS',
+        type: 'HERO_DELETED',
         payload: id
     }
 }

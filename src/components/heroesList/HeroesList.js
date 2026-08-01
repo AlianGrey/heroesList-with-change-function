@@ -16,6 +16,7 @@ const HeroesList = () => {
 
     useEffect(() => {
         dispatch(heroesFetching());
+        //request(process.env.PUBLIC_URL + '/heroes.json')
         request("http://localhost:3001/heroes")
             .then(data => dispatch(heroesFetched(data)))
             .catch(() => dispatch(heroesFetchingError()))
