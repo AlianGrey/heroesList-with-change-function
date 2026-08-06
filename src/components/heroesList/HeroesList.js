@@ -1,27 +1,55 @@
 import {useHttp} from '../../hooks/http.hook';
-import { useEffect, useState } from 'react';
+import { useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import Spinner from '../spinner/Spinner';
-import { heroesFetching, heroesFetched, heroesFetchingError } from '../../actions';
+import { CSSTransition, TransitionGroup} from 'react-transition-group';
+import { createSelector } from 'reselect';
+
+import { heroesFetching, heroesFetched, heroesFetchingError, heroDeleted } from '../../actions';
 import HeroesListItem from "../heroesListItem/HeroesListItem";
-import './heroesList.scss'
+import Spinner from '../spinner/Spinner';
+import './heroesList.scss';
 
 
 const HeroesList = () => {
-    const {heroes, heroesLoadingStatus, activeFilter} = useSelector(state => state);
-    const [ deletingId, setDeletingId ] = useState(null)
+    
+    const filteredHeroesSelector = createSelector ( 
+        (state) => state.heroes.heroes,
+        (state) => state.filters.activeFilter,
+        (heroes, filter) => {
+              if (filter === "all") {
+                return heroes;
+                } else {
+                    return heroes.filter(item => item.element === filter)
+                }
+        }
+    )
+
+    const filteredHeroes = useSelector(filteredHeroesSelector);
+
+    const heroesLoadingStatus = useSelector(state => state.heroes.heroesLoadingStatus);
     const dispatch = useDispatch();
     const {request} = useHttp();
 
     useEffect(() => {
-        dispatch(heroesFetching());
-        //request(process.env.PUBLIC_URL + '/heroes.json')
+        dispatch('HEROES_FETCHING'); 
         request("http://localhost:3001/heroes")
             .then(data => dispatch(heroesFetched(data)))
             .catch(() => dispatch(heroesFetchingError()))
+
         // eslint-disable-next-line
     }, []);
+
+    // Функция берет id и по нему удаляет ненужного персонажа из store
+    // ТОЛЬКО если запрос на удаление прошел успешно
+    // Отслеживайте цепочку действий actions => reducers
+    const onDelete = useCallback((id) => {
+        // Удаление персонажа по его id
+        request(`http://localhost:3001/heroes/${id}`, "DELETE")
+            .then(data => console.log(data, 'Deleted'))
+            .then(dispatch(heroDeleted(id)))
+            .catch(err => console.log(err));
+        // eslint-disable-next-line  
+    }, [request]);
 
     if (heroesLoadingStatus === "loading") {
         return <Spinner/>;
@@ -30,39 +58,33 @@ const HeroesList = () => {
     }
 
     const renderHeroesList = (arr) => {
-        let filtered =[]
         if (arr.length === 0) {
-            return <h5 className="text-center mt-5">Героев пока нет</h5>
-        }
-
-        filtered = arr.filter ( item => {
-            if (activeFilter === 'all') return true;
-            return item.element === activeFilter;
-        })
-
-        if ( filtered.length === 0 ) {
             return (
-                <CSSTransition key="empty" timeout={300} classNames="hero">
-                    <h5 className="text-center mt-5">Нет соответствующих элементов</h5>
+                <CSSTransition
+                    timeout={0}
+                    classNames="hero">
+                    <h5 className="text-center mt-5">Героев пока нет</h5>
                 </CSSTransition>
             )
-        } 
+        }
 
-        return filtered.map( props => (
-            <CSSTransition key={props.id} timeout={300} classNames="hero">
-                <HeroesListItem 
-                    {...props}
-                    deletingId={deletingId}
-                    setDeletingId={setDeletingId}/> 
-            </CSSTransition>
-        ))
+        return arr.map(({id, ...props}) => {
+            return (
+                <CSSTransition 
+                    key={id}
+                    timeout={500}
+                    classNames="hero">
+                    <HeroesListItem  {...props} onDelete={() => onDelete(id)}/>
+                </CSSTransition>
+            )
+        })
     }
 
-    const elements = renderHeroesList(heroes);
+    const elements = renderHeroesList(filteredHeroes);
     return (
-       <TransitionGroup component="ul"> 
-                {elements}
-        </TransitionGroup >
+        <TransitionGroup component="ul">
+            {elements}
+        </TransitionGroup>
     )
 }
 

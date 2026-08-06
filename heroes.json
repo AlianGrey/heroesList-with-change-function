@@ -1,66 +1,61 @@
 {
   "heroes": [
     {
-      "id": 2,
-      "name": "Неизвестный герой",
-      "description": "Скрывающийся в тени",
-      "element": "wind"
-    },
-    {
       "id": "e62a7a71-d21d-449d-9616-79d91fa25340",
       "name": "Гарри Поттер",
       "description": "Колдовать палочкой, летать на метле",
       "element": "fire"
     },
     {
-      "id": "82dbd83d-6e56-43c7-a1b8-5ba045f1ad57",
-      "name": "Артём",
-      "description": "читать и писать",
+      "id": "126ca8b6-4d00-42e8-94bd-cb31bd91c382",
+      "name": "kdskfhskjr",
+      "description": "jfkdsjgdjgrd",
+      "element": "wind"
+    },
+    {
+      "id": "61bdaffa-ca24-48a9-b034-a1c46b38eb7a",
+      "name": "fvfgbr",
+      "description": "btrtbrtb",
       "element": "water"
     },
     {
-      "id": "89932af9-61d2-4902-a921-ba8d305e4a60",
-      "name": "ytfyh",
-      "description": "cfvygubhnjmk,l.;bnm",
-      "element": "fire"
+      "id": "bc46d782-cee9-4440-81ba-ec05ededd228",
+      "name": "RGRTSB",
+      "description": "BGRRTB",
+      "element": "earth"
     },
     {
-      "id": "0c6b28c8-ae50-4bb3-8d36-bfce62c9549c",
-      "name": "twyretkyul.",
-      "description": "rweyj./rerjghkj,rwg",
-      "element": "wind"
+      "id": "9d398357-7f20-43c3-8007-a630ec10c33c",
+      "name": "trnr",
+      "description": "dbgrd",
+      "element": "water"
     }
   ],
   "filters": [
     {
-      "id": "1",
       "name": "all",
       "label": "Все",
-      "class": "outline-dark"
+      "className": "btn-outline-dark"
     },
     {
-      "id": "2",
       "name": "fire",
       "label": "Огонь",
-      "class": "danger"
+      "className": "btn-danger"
     },
     {
-      "id": "3",
       "name": "water",
       "label": "Вода",
-      "class": "primary"
+      "className": "btn-primary"
     },
     {
-      "id": "4",
       "name": "wind",
       "label": "Ветер",
-      "class": "success"
+      "className": "btn-success"
     },
     {
-      "id": "5",
       "name": "earth",
       "label": "Земля",
-      "class": "secondary"
+      "className": "btn-secondary"
     }
   ]
 }
