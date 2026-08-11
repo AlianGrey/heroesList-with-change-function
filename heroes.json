@@ -7,52 +7,57 @@
       "element": "fire"
     },
     {
-      "id": "126ca8b6-4d00-42e8-94bd-cb31bd91c382",
-      "name": "kdskfhskjr",
-      "description": "jfkdsjgdjgrd",
-      "element": "wind"
+      "id": "16b0150d-a065-485a-9ae6-2df1291a0db4",
+      "name": "Артём",
+      "description": "плеваться дальше всех в семье",
+      "element": "fire"
     },
     {
-      "id": "61bdaffa-ca24-48a9-b034-a1c46b38eb7a",
-      "name": "fvfgbr",
-      "description": "btrtbrtb",
+      "id": "5e828531-1c2c-4e5a-ac24-6dd2979716d8",
+      "name": "Санька",
+      "description": "бесконечно бухтеть",
       "element": "water"
     },
     {
-      "id": "bc46d782-cee9-4440-81ba-ec05ededd228",
-      "name": "RGRTSB",
-      "description": "BGRRTB",
+      "id": "04ccf70b-214b-4dca-a5ef-5fed6875f1b9",
+      "name": "Дианка",
+      "description": "Ничего не делать и только смотреть видосы",
       "element": "earth"
     },
     {
-      "id": "9d398357-7f20-43c3-8007-a630ec10c33c",
-      "name": "trnr",
-      "description": "dbgrd",
-      "element": "water"
+      "id": "981a3c8d-7fcd-4e95-a06f-d51427bff8fb",
+      "name": "петя",
+      "description": "умеет плавать и все",
+      "element": "wind"
     }
   ],
   "filters": [
     {
+      "id": "all",
       "name": "all",
       "label": "Все",
       "className": "btn-outline-dark"
     },
     {
+      "id": "fire",
       "name": "fire",
       "label": "Огонь",
       "className": "btn-danger"
     },
     {
+      "id": "water",
       "name": "water",
       "label": "Вода",
       "className": "btn-primary"
     },
     {
+      "id": "wind",
       "name": "wind",
       "label": "Ветер",
       "className": "btn-success"
     },
     {
+      "id": "earth",
       "name": "earth",
       "label": "Земля",
       "className": "btn-secondary"
