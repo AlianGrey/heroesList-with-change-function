@@ -8,17 +8,14 @@ const initialState = filtersAdapter.getInitialState({
     activeFilter: 'all'
 })
 
-/* const initialState = {
-    filters: [],
-    filtersLoadingStatus: 'idle',
-    activeFilter: 'all'
-} */
-
 export const fetchFilters = createAsyncThunk(
     'filters/fetchFilters',
     async () => {
         const { request } = useHttp();
-        return await request("http://localhost:3001/filters")
+        //for local work
+        //return await request("http://localhost:3001/filters")
+        //for deploy
+        return await request("https://heroes-api-xdrb.onrender.com/filters")
     }
 )
 
@@ -27,7 +24,6 @@ const filtersSlice = createSlice({
     initialState,
     reducers: {
         activeFilterChanged: (state, action) => {
-            //filtersAdapter.select
             state.activeFilter = action.payload;
         }
     },

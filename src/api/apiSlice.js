@@ -2,7 +2,12 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const apiSlice = createApi({
     reducerPath: 'api',
-    baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3001'}),
+    baseQuery: fetchBaseQuery({ 
+        //for local work
+        //baseUrl: 'http://localhost:3001'
+        //for deploy
+        baseUrl: 'https://heroes-api-xdrb.onrender.com'
+    }),
     tagTypes: ['Heroes'],
     endpoints: builder => ({
         getHeroes: builder.query({
