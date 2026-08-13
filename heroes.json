@@ -1,34 +1,34 @@
 {
   "heroes": [
     {
-      "id": "e62a7a71-d21d-449d-9616-79d91fa25340",
-      "name": "Гарри Поттер",
-      "description": "Колдовать палочкой, летать на метле",
-      "element": "fire"
-    },
-    {
-      "id": "5e828531-1c2c-4e5a-ac24-6dd2979716d8",
-      "name": "Санька",
-      "description": "бесконечно бухтеть",
-      "element": "water"
-    },
-    {
-      "id": "04ccf70b-214b-4dca-a5ef-5fed6875f1b9",
-      "name": "Дианка",
-      "description": "Ничего не делать и только смотреть видосы",
+      "id": "b5fce412-4f45-488b-af6a-6be03afe572f",
+      "name": "Shadow",
+      "description": "Can become invisible and move silently",
       "element": "earth"
     },
     {
-      "id": "981a3c8d-7fcd-4e95-a06f-d51427bff8fb",
-      "name": "петя",
-      "description": "умеет плавать и все",
+      "id": "48cabcbd-f646-44ff-8516-5970b626172b",
+      "name": "Blaze",
+      "description": "Can control and create fire",
+      "element": "fire"
+    },
+    {
+      "id": "d4f7d012-55fa-4d8f-8070-5e9faf67d1a0",
+      "name": "Aqua",
+      "description": "Can breathe underwater and control water",
+      "element": "water"
+    },
+    {
+      "id": "54009ca9-d8a2-401f-b3e2-0f0aeb979418",
+      "name": "Storm",
+      "description": "Can summon lightning and control the wind",
       "element": "wind"
     },
     {
-      "id": "84065c17-09d5-41ad-8d3c-22da6d1f42da",
-      "name": "fdbgn",
-      "description": "dng",
-      "element": "fire"
+      "id": "5d3c2d87-b740-4a12-afde-c192f538adcc",
+      "name": "Terra",
+      "description": "Can control rocks and create earthquakes",
+      "element": "earth"
     }
   ],
   "filters": [
