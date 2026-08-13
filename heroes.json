@@ -7,12 +7,6 @@
       "element": "fire"
     },
     {
-      "id": "16b0150d-a065-485a-9ae6-2df1291a0db4",
-      "name": "Артём",
-      "description": "плеваться дальше всех в семье",
-      "element": "fire"
-    },
-    {
       "id": "5e828531-1c2c-4e5a-ac24-6dd2979716d8",
       "name": "Санька",
       "description": "бесконечно бухтеть",
@@ -29,6 +23,12 @@
       "name": "петя",
       "description": "умеет плавать и все",
       "element": "wind"
+    },
+    {
+      "id": "84065c17-09d5-41ad-8d3c-22da6d1f42da",
+      "name": "fdbgn",
+      "description": "dng",
+      "element": "fire"
     }
   ],
   "filters": [
