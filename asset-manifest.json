@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/heroesList-with-change-function/static/css/main.eab114a0.css",
-    "main.js": "/heroesList-with-change-function/static/js/main.ac1fc797.js",
+    "main.js": "/heroesList-with-change-function/static/js/main.dd607b7d.js",
     "static/media/hero_bg.jpg": "/heroesList-with-change-function/static/media/hero_bg.0540b794b0424b67d780.jpg",
     "static/media/default_user.png": "/heroesList-with-change-function/static/media/default_user.ae49341551af39b6b408.png",
     "index.html": "/heroesList-with-change-function/index.html",
     "main.eab114a0.css.map": "/heroesList-with-change-function/static/css/main.eab114a0.css.map",
-    "main.ac1fc797.js.map": "/heroesList-with-change-function/static/js/main.ac1fc797.js.map"
+    "main.dd607b7d.js.map": "/heroesList-with-change-function/static/js/main.dd607b7d.js.map"
   },
   "entrypoints": [
     "static/css/main.eab114a0.css",
-    "static/js/main.ac1fc797.js"
+    "static/js/main.dd607b7d.js"
   ]
 }
